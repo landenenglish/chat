@@ -28,7 +28,7 @@ export default defineEventHandler(async (event) => {
 
     const httpReferer = process.dev
       ? 'http://localhost:3000'
-      : 'https://chat-app-production.com' // Replace with your production URL
+      : 'https://free-models.vercel.app/'
 
     const response = await fetch(
       'https://openrouter.ai/api/v1/chat/completions',
