@@ -10,7 +10,7 @@
       </a>
 
       <h1 class="absolute left-1/2 -translate-x-1/2 text-2xl text-primary-500">
-        Free Router
+        Free Chat
       </h1>
 
       <div class="flex items-center">

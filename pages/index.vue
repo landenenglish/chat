@@ -1,17 +1,19 @@
 <script setup lang="ts">
-const model = ref<Model>()
+import { useClientStorage } from '~/composables/useClientStorage'
+
+const model = useClientStorage<Model>('selected-model')
+const company = useClientStorage<Company>('selected-company')
 </script>
 
 <template>
-  <div class="mx-auto flex h-full max-w-xl flex-col items-center gap-4">
-    <ModelPicker v-model:model="model" />
-
-    <div v-if="model" class="flex flex-col gap-4">
-      <div class="flex flex-col gap-2">
-        <h2 class="text-2xl font-bold">
-          {{ model.name }}
-        </h2>
+  <div class="flex h-[95dvh] w-full flex-col overflow-hidden">
+    <div class="flex-none p-4">
+      <div class="mx-auto w-full max-w-xl">
+        <ModelPicker v-model:model="model" v-model:company="company" />
       </div>
     </div>
+    <main class="relative min-h-0 flex-1 overflow-hidden">
+      <ChatInterface v-if="model" :model="model" class="absolute inset-0" />
+    </main>
   </div>
 </template>
