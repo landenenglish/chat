@@ -2,13 +2,14 @@
 import Aura from '@primeuix/themes/aura'
 import { APP_NAME } from './shared/constants/name'
 import { preventFlash } from './utils/prevent-flash'
+
 export default defineNuxtConfig({
-  devtools: { enabled: false },
+  devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss', '@primevue/nuxt-module', '@vueuse/nuxt'],
 
   runtimeConfig: {
-    public: {
-      // Environment variables
+    openRouter: {
+      apiKey: process.env.OPENROUTER_API_KEY,
     },
   },
 

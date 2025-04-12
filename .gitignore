@@ -26,4 +26,4 @@ logs
 # non npm lock files
 yarn.lock
 bun.lockb
-pnpm-lock.yaml
+pnpm-lock.yaml.env
